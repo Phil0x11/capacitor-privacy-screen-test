@@ -1,0 +1,7 @@
+{
+  "name": "privacy-screen-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
