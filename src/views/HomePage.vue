@@ -16,19 +16,33 @@
       <div id="container">
         <strong>Ready to create an app?</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+        <h1>Some Content</h1>
+
+        <ion-button @click="enable">Enable Privacy Screen</ion-button>
+        <ion-button @click="disable">Disable Privacy Screen</ion-button>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
+import { PrivacyScreen } from "@capacitor-community/privacy-screen";
+
+const enable = async () => {
+  await PrivacyScreen.enable();
+};
+
+const disable = async () => {
+  await PrivacyScreen.disable();
+};
 </script>
 
 <style scoped>
 #container {
   text-align: center;
-  
+
   position: absolute;
   left: 0;
   right: 0;
@@ -44,9 +58,9 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 #container p {
   font-size: 16px;
   line-height: 22px;
-  
+
   color: #8c8c8c;
-  
+
   margin: 0;
 }
 

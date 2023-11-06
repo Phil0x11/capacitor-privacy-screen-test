@@ -6,7 +6,13 @@ const config: CapacitorConfig = {
   webDir: 'dist',
   server: {
     androidScheme: 'https'
-  }
+  },
+  plugins: {
+    PrivacyScreen: {
+      enable: false,
+      imageName: "Splashscreen",
+    },
+  },
 };
 
 export default config;
